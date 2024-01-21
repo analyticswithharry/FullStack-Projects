@@ -1,0 +1,61 @@
+/* Resets margin, padding, and box-sizing for all elements to avoid unexpected spacing */
+* {
+    margin: 0px; /* Sets the margin of all elements to 0 pixels */
+    padding: 0px; /* Sets the padding of all elements to 0 pixels */
+    box-sizing: border-box; /* Uses the border-box model for sizing elements */
+}
+
+/* Styles the <nav> element with transparency */
+nav {
+    width: 100%; /* Sets the width of the navigation bar to 100% of its container */
+    height: 75px; /* Defines the height of the navigation bar */
+    line-height: 75px; /* Sets the line height to vertically center content */
+    padding: 0px 100px; /* Adds horizontal padding (left and right) */
+    position: fixed; /* Fixes the navigation bar in its position */
+    background-image: linear-gradient(#000000, rgba(12, 99, 142, 0)); /* Applies a linear gradient background with transparency */
+}
+
+/* Styles elements with the .logo class inside the <nav> element */
+nav .logo {
+    font-size: 25px; /* Sets the font size for elements with the .logo class */
+    font-weight: bold; /* Applies bold text style */
+    float: left; /* Floats the element to the left within its container */
+    color: white; /* Sets the text color to white */
+    text-transform: uppercase; /* Transforms text to uppercase */
+    letter-spacing: 1.5px; /* Adds space between letters for better readability */
+    cursor: pointer; /* Changes the cursor to a pointer on hover */
+}
+
+/* Styles the <ul> element inside the <nav> */
+nav ul {
+    float: right; /* Floats the unordered list to the right */
+}
+
+/* Styles the <li> elements within the <nav> */
+nav li {
+    display: inline-block; /* Displays list items in a horizontal line */
+    list-style: none; /* Removes the default list-style (usually bullets) */
+}
+
+/* Styles the <a> elements within the <li> elements */
+nav li a {
+    font-size: 16px; /* Sets the font size for links within list items */
+    text-transform: uppercase; /* Transforms link text to uppercase */
+    padding: 0px 30px; /* Adds horizontal padding to links */
+    color: white; /* Sets the link text color to white */
+    text-decoration: none; /* Removes underlines from links */
+}
+
+/* Styles the <a> elements within the <li> elements on hover */
+nav li a:hover {
+    color: #ff0000; /* Changes link text color to red on hover */
+    transition: all 0.4s ease 0s; /* Adds a smooth transition effect on hover */
+}
+
+/* Styles images within elements with the .content-item class */
+.content img {
+    width: 100%; /* Sets the width of images to 100% of their container */
+    height: 100vh; /* Sets the height of images to 100% of the viewport height */
+    background-size: cover; /* Scales images to cover the entire container */
+    background-position: center; /* Centers images horizontally and vertically */
+}
