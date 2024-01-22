@@ -1,0 +1,81 @@
+  /* Reset some default styles for all elements */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+}
+/*
+footer background colors
+*/
+footer {
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 0px;
+}
+.container{
+    display: flex;
+    gap: 20px;
+    padding: 50px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.container h3{
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.about {
+     background-color: rgb(0, 0, 0);
+     flex-grow: 1;
+     flex-basis: 100%;
+}
+.service{
+    background-color: rgb(0, 0, 0);
+    flex-grow: 1;
+    flex-basis: 80%;
+    margin: 0 20px;
+}
+.service, ul {
+    list-style-type: none;
+    line-height: 1.6;
+}
+.service, a {
+    color: white;
+    text-decoration: none;
+}
+.service a:hover{
+    color: rgb(0, 0, 0);
+    text-decoration: underline;
+}
+
+.contact {
+    background-color: rgb(0, 0, 0);
+    flex-grow: 1;
+    flex-basis: 100%;
+}
+
+.contact ul {
+    list-style-type: none;
+    line-height: 2;
+}
+
+.copyright {
+    padding: 15px;
+    text-align: center;
+    border-top: 1px solid grey;
+}
+
+@media only screen and (max-width: 768px){
+.container{
+            flex-direction:  column;
+     }
+}
