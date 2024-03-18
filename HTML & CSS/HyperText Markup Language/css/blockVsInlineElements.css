@@ -1,0 +1,99 @@
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header styles */
+header {
+  text-align: center;
+  background-color: #030303;
+  /* Header background color */
+  color: #fff;
+  /* Header text color */
+  padding: 20px 0;
+  /* Add padding to the top and bottom */
+  border-radius: 10px;
+}
+
+header h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+header h1:hover {
+  color: #ff0000;
+  cursor: pointer;
+  /* Change the text color on hover */
+}
+
+/* Body styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 20px;
+}
+
+/* Header styles */
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Superscript styles */
+sup {
+  font-size: 0.8em;
+}
+
+/* Subscript styles */
+sub {
+  font-size: 0.8em;
+}
+
+/* Paragraph styles */
+p {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Image styles */
+img {
+  max-width: 50%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  margin: 0 auto 10px;
+  /* Center the image horizontally and add margin at the bottom */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  /* Smooth transition for the transform and opacity properties */
+}
+
+img:hover {
+  transform: scale(0.9);
+  /* Scale the image on hover */
+  opacity: 0.8;
+  /* Reduce opacity slightly on hover */
+  color: #e79b9b;
+}
+
+/* Span styles */
+span {
+  font-weight: bold;
+  color: #ef0404;
+}
+
+/* Divider styles */
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 20px 0;
+}
+
+/* Align specific text to the left */
+.left-align {
+  text-align: left;
+}
