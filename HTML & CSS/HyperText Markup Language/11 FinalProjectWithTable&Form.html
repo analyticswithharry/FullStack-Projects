@@ -1,1 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>BMI, Age, Weight, and Name Calculator</title>
+        <style>
+            body {
+                font-family: 'Arial', sans-serif;
+                margin: 0;
+                padding: 20px;
+                background-color: #f4f4f4;
+            }
+            h2 {
+                color: #333;
+            }
+            form {
+                background-color: #ffffff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                margin-bottom: 20px;
+            }
+            input[type="text"], input[type="number"], input[type="submit"] {
+                padding: 10px;
+                margin: 5px 0 20px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                width: calc(100% - 22px);
+                box-sizing: border-box;
+            }
+            input[type="submit"] {
+                background-color: #007bff;
+                color: white;
+                cursor: pointer;
+                border: none;
+            }
+            input[type="submit"]:hover {
+                background-color: #0056b3;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                background-color: #fff;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            th, td {
+                padding: 10px;
+                border: 1px solid #ddd;
+                text-align: left;
+            }
+            th {
+                background-color: #007bff;
+                color: #ffffff;
+            }
+            tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+            #averages {
+                background-color: #ffffff;
+                padding: 10px;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h2>Add Person</h2>
+        <form id="personForm">
+            Name: <input type="text" id="name" required>
+            Surname: <input type="text" id="surname" required>
+            Age: <input type="number" id="age" required>
+            Height (in centimeters): <input type="number" id="height" required>
+            Weight (in kg): <input type="number" id="weight" required>
+            <input type="submit" value="Add Person">
+        </form>
+
+        <h2>People and BMI</h2>
+        <table id="peopleTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Age</th>
+                    <th>Height</th>
+                    <th>Weight</th>
+                    <th>BMI</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data rows will be added here -->
+            </tbody>
+        </table>
+
+        <p id="averages">Average Age: N/A, Average Weight: N/A</p>
+
+        <script>
+        document.getElementById('personForm').onsubmit = function(event) {
+            event.preventDefault(); // Prevent form submission which reloads the page
+
+            // Retrieve input values
+            var name = document.getElementById('name').value;
+            var surname = document.getElementById('surname').value;
+            var age = document.getElementById('age').value;
+            var heightInCentimeters = document.getElementById('height').value;
+            var weight = document.getElementById('weight').value;
+            // Convert height from cm to meters for BMI calculation
+            var heightInMeters = heightInCentimeters / 100;
+            var bmi = (weight / (heightInMeters * heightInMeters)).toFixed(2); // Calculate BMI
+
+            // Add the new entry to the table
+            var table = document.getElementById('peopleTable').getElementsByTagName('tbody')[0];
+            var newRow = table.insertRow();
+            newRow.innerHTML = `<td>${name}</td><td>${surname}</td><td>${age}</td><td>${heightInCentimeters}</td><td>${weight}</td><td>${bmi}</td>`;
+
+            // Reset form fields for next input
+            document.getElementById('personForm').reset();
+
+            // Update the averages display
+            updateAverages();
+        };
+
+        function updateAverages() {
+            var table = document.getElementById('peopleTable').getElementsByTagName('tbody')[0];
+            var rows = table.rows;
+            var totalAge = 0, totalWeight = 0, count = rows.length;
+
+            for (var i = 0; i < rows.length; i++) {
+                totalAge += parseFloat(rows[i].cells[2].innerText); // Adjusted for the new column indices
+                totalWeight += parseFloat(rows[i].cells[4].innerText); // Adjusted for the new column indices
+            }
+
+            // Avoid division by zero
+            if (count > 0) {
+                var averageAge = (totalAge / count).toFixed(2);
+                var averageWeight = (totalWeight / count).toFixed(2);
+            } else {
+                var averageAge = "N/A";
+                var averageWeight = "N/A";
+            }
+
+            // Display the averages
+            document.getElementById('averages').innerText = `Average Age: ${averageAge}, Average Weight: ${averageWeight}`;
+        }
+    </script>
+
+    </body>
+</html>
 
