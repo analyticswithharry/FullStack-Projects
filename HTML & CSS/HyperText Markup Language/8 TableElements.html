@@ -1,26 +1,101 @@
-<table>
-    <thead>
-        <tr>
-            <th scope="col">Subscription</th>
-            <th scope="col">Price</th>
-            <th scope="col">Support</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Free</td>
-            <td>Free</td>
-            <td>N/A</td>
-        </tr>
-        <tr>
-            <td>Personal</td>
-            <td>$9.99</td>
-            <td>Weekdays</td>
-        </tr>
-        <tr>
-            <td>Business</td>
-            <td>$49.99</td>
-            <td>24/7</td>
-        </tr>
-    </tbody>
-</table>
+<!-- 
+Tables: TR, TD, and TH Elements
+Tables: Thead, Tbody, and Tfoot Elements
+Tables: Colspan & Rowspan
+-->
+
+<!DOCTYPE html> <!-- Declares the document type and version of HTML -->
+<html lang="en"> <!-- Specifies the language of this document is English -->
+
+    <head>
+        <meta charset="UTF-8">
+        <!-- Sets the character encoding for the document to UTF-8 -->
+        <title>Subscription Plans</title>
+        <!-- Sets the title of the document that appears in the browser tab -->
+
+        <style>
+    /* CSS styles for the document are defined within the <style> tag */
+
+    body {
+        font-family: 'Arial', sans-serif; /* Sets the default font for the document */
+        margin: 0; /* Removes default margin around the edges of the page */
+        padding: 20px; /* Adds padding inside the body element */
+        background-color: #f4f4f4; /* Sets the background color of the page */
+    }
+    table {
+        width: 100%; /* Makes the table width span the entire width of its container */
+        border-collapse: collapse; /* Collapses cell borders so they don't double up */
+        margin-top: 20px; /* Adds space above the table */
+    }
+    th, td {
+        padding: 10px; /* Adds padding inside table header and data cells for spacing */
+        border: 1px solid #ddd; /* Adds a light grey border around table cells */
+        text-align: left; /* Aligns text to the left within header and data cells */
+    }
+    th {
+        background-color: #007bff; /* Sets a blue background color for table headers */
+        color: #fff; /* Sets the text color of table headers to white */
+    }
+    td:hover {
+        background-color: red; /* Sets the background color of a cell on hover */
+        cursor: pointer; /* Changes the cursor to a pointer to indicate clickable */
+    }
+    tr:nth-child(even) {
+        background-color: #f2f2f2; /* Sets a grey background color for even rows for readability */
+    }
+    .highlight {
+        background-color: #ffff99; /* Sets a yellow background for rows with the 'highlight' class */
+    }
+    tfoot td {
+        font-weight: bold; /* Makes text in footer cells bold */
+        background-color: #e1e1e1; /* Sets a light grey background color for footer cells */
+    }
+    </style>
+    </head>
+    <body>
+        <h2>User Subscription Plans</h2>
+        <table> <!-- Creates a table -->
+            <thead> <!-- The head section of the table for column titles -->
+                <tr> <!-- A table row -->
+                    <th scope="col">Subscription</th>
+                    <!-- Column header for subscription types with scope indicating it's a column header -->
+                    <th scope="col">Price</th> <!-- Column header for prices -->
+                    <th scope="col">Support</th>
+                    <!-- Column header for support options -->
+                </tr>
+            </thead>
+            <tbody> <!-- The body section of the table for the data rows -->
+                <tr> <!-- A table row -->
+                    <td>Free</td> <!-- A cell in the table row -->
+                    <td>Free</td> <!-- Another cell in the table row -->
+                    <td>N/A</td> <!-- Another cell in the table row -->
+                </tr>
+                <tr>
+                    <td>Personal</td>
+                    <td>$9.99</td>
+                    <td>Weekdays</td>
+                </tr>
+                <tr class="highlight">
+                    <td>Business</td>
+                    <td>$49.99</td>
+                    <td>24/7</td>
+                </tr>
+                <tr>
+                    <td>Enterprise</td>
+                    <td>$99.99</td>
+                    <td>24/7 + Dedicated</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <!-- The footer section of the table, used here for a summary row -->
+                <tr> <!-- A table row in the footer -->
+                    <td colspan="2">Total Subscriptions</td>
+                    <!-- A cell in the footer row spanning two columns -->
+                    <td>4 types</td>
+                    <!-- A cell in the footer row indicating the total number of subscription types -->
+                </tr>
+            </tfoot>
+        </table>
+
+    </body>
+</html>
