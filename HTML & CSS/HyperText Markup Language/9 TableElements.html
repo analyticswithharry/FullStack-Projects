@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DataScience AI</title>
+        <style>
+            /* CSS styles are defined here. */
+            body {
+                font-family: Arial, sans-serif; /* Sets the default font for the body. */
+                margin: 20px; /* Adds a margin around the entire body content. */
+                background-color: #f5f5f5; /* Sets the background color of the page. */
+                color: #333; /* Sets the default text color. */
+            }
+            h1, h3 {
+                color: #007bff; /* Sets the color of h1 and h3 headings. */
+                text-align: center; /* Centers h1 and h3 text. */
+            }
+            table {
+                width: 100%; /* Table width is set to occupy the full width of its container. */
+                border-collapse: collapse; /* Collapses table borders into a single border. */
+                margin-top: 20px; /* Adds a top margin to the table. */
+                background-color: #fff; /* Sets the table's background color. */
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Adds a subtle shadow around the table. */
+            }
+            table, th, td {
+                border: 1px solid #ddd; /* Sets a light gray border for the table, th, and td elements. */
+            }
+            caption {
+                padding: 10px; /* Adds padding inside the caption element. */
+                caption-side: top; /* Positions the caption at the top of the table. */
+                font-size: 24px; /* Sets the font size of the caption. */
+                text-align: center; /* Centers the caption text. */
+                color: #333; /* Sets the color of the caption text. */
+            }
+            th {
+                background-color: #007bff; /* Sets the background color of table headers. */
+                color: #fff; /* Sets the text color of table headers to white. */
+                padding: 10px; /* Adds padding inside the th elements. */
+                text-align: left; /* Aligns the text inside th elements to the left. */
+            }
+            th:hover {
+                cursor: pointer; /* Changes the cursor to a pointer when hovering over th elements. */
+                background-color: #333; /* Changes the background color of th elements on hover. */
+            }
+            td {
+                padding: 10px; /* Adds padding inside td elements. */
+                text-align: left; /* Aligns the text inside td elements to the left. */
+                vertical-align: top; /* Aligns the content of td elements to the top. */
+            }
+            td:hover {
+                background-color: rgb(180, 203, 217); /* Changes the background color of td elements on hover. */
+                cursor: pointer; /* Changes the cursor to a pointer when hovering over td elements. */
+            }
+            tr:nth-child(even) {
+                background-color: #f2f2f2; /* Sets a different background color for even rows. */
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Regression Model</h1>
+        <section>
+            <!-- Begins a section for displaying a table of regression models -->
+            <table>
+                <!-- Starts the table structure -->
+                <caption>Types of Regression Models</caption>
+                <!-- Table caption providing title or context for the table -->
+                <thead>
+                    <!-- Table head containing column titles -->
+                    <tr>
+                        <!-- Table row for the header -->
+                        <th scope="col">Model</th>
+                        <!-- Column header indicating the model type -->
+                        <th scope="col">Algorithm</th>
+                        <!-- Column header indicating the algorithm used -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table body containing rows of table data -->
+                    <tr>
+                        <!-- Table row for OLS data -->
+                        <th scope="row">OLS (Ordinary Least Squares)</th>
+                        <!-- Row header for the OLS model type -->
+                        <td>OLS is a type of linear regression that estimates
+                            the parameters of a linear model. It minimizes the
+                            sum of squared residuals, ensuring the best possible
+                            fit between the observed data and the model's
+                            predictions. OLS is widely used for its simplicity
+                            and efficiency in cases where the independent
+                            variables are not highly correlated.</td>
+                        <!-- Detailed description of the OLS model -->
+                    </tr>
+                    <tr>
+                        <!-- Table row for WLS data -->
+                        <th scope="row">WLS (Weighted Least Squares)</th>
+                        <!-- Row header for the WLS model type -->
+                        <td>WLS is an extension of OLS that assigns different
+                            weights to data points based on their variance. This
+                            method is particularly useful when dealing with
+                            heteroscedasticity. WLS aims to provide more
+                            accurate parameter estimates by giving less weight
+                            to data points with higher variance.</td>
+                        <!-- Detailed description of the WLS model -->
+                    </tr>
+                    <tr>
+                        <!-- Table row for GLS data -->
+                        <th scope="row">GLS (Generalized Least Squares)</th>
+                        <!-- Row header for the GLS model type -->
+                        <td>GLS is a flexible approach to linear regression that
+                            allows for the modeling of correlations and
+                            non-constant variability in the data. GLS can handle
+                            situations where assumptions of constant variance
+                            and no autocorrelation are violated, by transforming
+                            the original model into one that can be estimated
+                            using OLS techniques.</td>
+                        <!-- Detailed description of the GLS model -->
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section>
+            <!-- Begins a section dedicated to a more detailed discussion of the OLS model -->
+            <h3>OLS - Ordinary Least Squares</h3>
+            <!-- Subheading for the OLS section -->
+            <p>Ordinary Least Squares (OLS) is a fundamental method for linear
+                regression analysis, aiming to find the best-fitting line
+                through the data points by minimizing the sum of the squares of
+                the vertical distances of the points from the line. This method
+                assumes that there is a linear relationship between the
+                independent variables and the dependent variable. OLS is
+                particularly effective in scenarios where the data does not show
+                significant multicollinearity and the error terms are
+                homoscedastic and independently distributed.</p>
+            <!-- Paragraph providing a comprehensive description of the OLS methodology -->
+        </section>
+
+    </body>
+</html>
