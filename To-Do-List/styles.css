@@ -1,0 +1,154 @@
+* { /* Applies styles to all elements */
+    margin: 0; /* Removes default margins */
+    padding: 0; /* Removes default padding */
+    box-sizing: border-box; /* Ensures padding and borders are included in element dimensions */
+}
+
+body { /* Styles the body element */
+    font-family: 'Roboto', sans-serif; /* Uses Roboto font with sans-serif fallback */
+    background: linear-gradient(135deg, #e0e7ff, #c3dafe); /* Applies a gradient background from light blue to indigo */
+    display: flex; /* Uses Flexbox for layout */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    min-height: 100vh; /* Ensures body takes at least full viewport height */
+    padding: 20px; /* Adds 20px padding for spacing */
+}
+
+.container { /* Styles the main container */
+    background: white; /* Sets a white background */
+    padding: 24px; /* Adds 24px padding inside the container */
+    border-radius: 12px; /* Rounds corners with 12px radius */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+    width: 100%; /* Sets width to 100% of parent */
+    max-width: 500px; /* Limits maximum width to 500px for responsiveness */
+    animation: fadeIn 0.5s ease-in; /* Applies a fade-in animation on page load */
+}
+
+@keyframes fadeIn { /* Defines the fadeIn animation */
+    from { opacity: 0; transform: translateY(-10px); } /* Starts with 0 opacity and slight upward shift */
+    to { opacity: 1; transform: translateY(0); } /* Ends with full opacity and no shift */
+}
+
+h1 { /* Styles the main heading */
+    text-align: center; /* Centers the text */
+    color: #1e3a8a; /* Sets a dark blue color */
+    margin-bottom: 20px; /* Adds 20px margin below */
+    font-size: 28px; /* Sets font size to 28px */
+    font-weight: 700; /* Makes text bold */
+}
+
+.input-section { /* Styles the input and button container */
+    display: flex; /* Uses Flexbox for layout */
+    gap: 10px; /* Adds 10px spacing between input and button */
+    margin-bottom: 16px; /* Adds 16px margin below */
+}
+
+input { /* Styles the input field */
+    flex: 1; /* Takes remaining space in flex container */
+    padding: 12px; /* Adds 12px padding inside */
+    border: 1px solid #d1d5db; /* Adds a light gray border */
+    border-radius: 8px; /* Rounds corners with 8px radius */
+    font-size: 16px; /* Sets font size to 16px */
+    transition: border-color 0.3s; /* Smoothly transitions border color on focus */
+}
+
+input:focus { /* Styles input when focused */
+    outline: none; /* Removes default outline */
+    border-color: #3b82f6; /* Changes border to blue on focus */
+}
+
+button { /* Styles all buttons */
+    padding: 12px 24px; /* Adds 12px vertical, 24px horizontal padding */
+    background: linear-gradient(135deg, #3b82f6, #1e40af); /* Applies a blue gradient background */
+    color: white; /* Sets text color to white */
+    border: none; /* Removes default border */
+    border-radius: 8px; /* Rounds corners with 8px radius */
+    font-size: 16px; /* Sets font size to 16px */
+    cursor: pointer; /* Shows pointer cursor on hover */
+    transition: transform 0.2s, background 0.3s; /* Smoothly transitions transform and background */
+}
+
+button:hover { /* Styles buttons on hover */
+    transform: translateY(-2px); /* Slightly lifts button up */
+    background: linear-gradient(135deg, #2563eb, #1e3a8a); /* Darkens gradient on hover */
+}
+
+.error { /* Styles the error message paragraph */
+    color: #dc2626; /* Sets red color for error text */
+    font-size: 14px; /* Sets font size to 14px */
+    margin-bottom: 12px; /* Adds 12px margin below */
+    text-align: center; /* Centers the text */
+}
+
+.hidden { /* Hides elements with class="hidden" */
+    display: none; /* Sets display to none to hide element */
+}
+
+.task-stats { /* Styles the task statistics container */
+    display: flex; /* Uses Flexbox for layout */
+    justify-content: space-between; /* Spreads children evenly */
+    align-items: center; /* Aligns children vertically */
+    margin-bottom: 16px; /* Adds 16px margin below */
+    font-size: 14px; /* Sets font size to 14px */
+    color: #4b5563; /* Sets a gray text color */
+}
+
+.clear-btn { /* Styles the Clear All button */
+    padding: 8px 16px; /* Adds smaller padding for secondary button */
+    background: linear-gradient(135deg, #ef4444, #b91c1c); /* Applies a red gradient */
+}
+
+.clear-btn:hover { /* Styles Clear All button on hover */
+    background: linear-gradient(135deg, #dc2626, #991b1b); /* Darkens red gradient */
+    transform: translateY(-2px); /* Lifts button up */
+}
+
+ul { /* Styles the unordered list for tasks */
+    list-style: none; /* Removes default list bullets */
+}
+
+li { /* Styles each list item (task) */
+    display: flex; /* Uses Flexbox for layout */
+    justify-content: space-between; /* Aligns content with space between */
+    align-items: center; /* Centers items vertically */
+    padding: 12px; /* Adds 12px padding */
+    border-bottom: 1px solid #e5e7eb; /* Adds a light gray bottom border */
+    background: #f9fafb; /* Sets a light background for tasks */
+    margin-bottom: 8px; /* Adds 8px margin below */
+    border-radius: 6px; /* Rounds corners with 6px radius */
+    transition: transform 0.2s, background 0.2s; /* Smoothly transitions transform and background */
+}
+
+li:hover { /* Styles list items on hover */
+    transform: translateX(5px); /* Slightly shifts task right */
+    background: #f3f4f6; /* Slightly darkens background */
+}
+
+.completed { /* Styles completed tasks */
+    text-decoration: line-through; /* Adds a strikethrough to text */
+    color: #6b7280; /* Sets a gray color for completed tasks */
+    background: #e5e7eb; /* Sets a darker background for completed tasks */
+}
+
+.delete-btn { /* Styles delete buttons */
+    background: linear-gradient(135deg, #ef4444, #b91c1c); /* Applies a red gradient */
+    padding: 8px 16px; /* Adds padding to delete buttons */
+}
+
+.delete-btn:hover { /* Styles delete buttons on hover */
+    background: linear-gradient(135deg, #dc2626, #991b1b); /* Darkens red gradient */
+    transform: translateY(-2px); /* Lifts button up */
+}
+
+@media (max-width: 480px) { /* Applies styles for screens smaller than 480px */
+    .container { /* Adjusts container for small screens */
+        padding: 16px; /* Reduces padding to 16px */
+    }
+    .input-section { /* Adjusts input section for small screens */
+        flex-direction: column; /* Stacks input and button vertically */
+        gap: 8px; /* Reduces gap to 8px */
+    }
+    input, button { /* Adjusts input and button for small screens */
+        width: 100%; /* Makes them full-width */
+    }
+}
