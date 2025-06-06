@@ -1,0 +1,227 @@
+* { /* Applies styles to all elements */
+    margin: 0; /* Removes default margins */
+    padding: 0; /* Removes default padding */
+    box-sizing: border-box; /* Includes padding and borders in element dimensions */
+}
+
+body { /* Styles the body element */
+    font-family: 'Roboto', sans-serif; /* Uses Roboto font with sans-serif fallback */
+    background: linear-gradient(135deg, #e0e7ff, #c3dafe); /* Applies a blue-to-indigo gradient background */
+    display: flex; /* Uses Flexbox for layout */
+    justify-content: center; /* Centers content horizontally */
+    align-items: flex-start; /* Aligns content to top for scrolling */
+    min-height: 100vh; /* Ensures body takes full viewport height */
+    padding: 20px; /* Adds 20px padding around body */
+}
+
+.container { /* Styles the main container */
+    background: white; /* Sets white background */
+    padding: 24px; /* Adds 24px padding */
+    border-radius: 12px; /* Rounds corners with 12px radius */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+    width: 100%; /* Sets full width of parent */
+    max-width: 600px; /* Limits max width to 600px */
+    animation: fadeIn 0.5s ease-in; /* Applies fade-in animation on load */
+}
+
+@keyframes fadeIn { /* Defines fadeIn animation */
+    from { opacity: 0; transform: translateY(-10px); } /* Starts with no opacity and slight upward shift */
+    to { opacity: 1; transform: translateY(0); } /* Ends with full opacity and no shift */
+}
+
+h1 { /* Styles the main heading */
+    text-align: center; /* Centers text */
+    color: #1e3a8a; /* Sets dark blue color */
+    margin-bottom: 20px; /* Adds 20px margin below */
+    font-size: 28px; /* Sets font size to 28px */
+    font-weight: 700; /* Makes text bold */
+}
+
+.input-section { /* Styles input section */
+    display: flex; /* Uses Flexbox for layout */
+    gap: 10px; /* Adds 10px spacing between elements */
+    margin-bottom: 16px; /* Adds 16px margin below */
+    flex-wrap: wrap; /* Allows wrapping on small screens */
+}
+
+input, select { /* Styles input and select elements */
+    flex: 1; /* Takes available space */
+    padding: 12px; /* Adds 12px padding */
+    border: 1px solid #d1d5db; /* Adds light gray border */
+    border-radius: 8px; /* Rounds corners */
+    font-size: 16px; /* Sets font size */
+    min-width: 120px; /* Ensures minimum width for responsiveness */
+    transition: border-color 0.3s; /* Smoothly transitions border color */
+}
+
+input:focus, select:focus { /* Styles inputs and selects when focused */
+    outline: none; /* Removes default outline */
+    border-color: #3b82f6; /* Sets blue border */
+}
+
+button { /* Styles all buttons */
+    padding: 12px 24px; /* Adds padding */
+    background: linear-gradient(135deg, #3b82f6, #1e40af); /* Blue gradient background */
+    color: white; /* White text */
+    border: none; /* Removes default border */
+    border-radius: 8px; /* Rounds corners */
+    font-size: 16px; /* Sets font size */
+    cursor: pointer; /* Shows pointer cursor */
+    transition: transform 0.2s, background 0.3s; /* Smooth transitions */
+}
+
+button:hover { /* Styles buttons on hover */
+    transform: translateY(-2px); /* Lifts button */
+    background: linear-gradient(135deg, #2563eb, #1e3a8a); /* Darkens gradient */
+}
+
+.error { /* Styles error message */
+    color: #dc2626; /* Red color */
+    font-size: 14px; /* Font size */
+    margin-bottom: 12px; /* Margin below */
+    text-align: center; /* Centers text */
+}
+
+.hidden { /* Hides elements */
+    display: none; /* Sets display to none */
+}
+
+.task-stats { /* Styles task statistics section */
+    display: flex; /* Uses Flexbox */
+    flex-wrap: wrap; /* Allows wrapping */
+    gap: 10px; /* Adds spacing */
+    justify-content: space-between; /* Spreads content */
+    align-items: center; /* Aligns vertically */
+    margin-bottom: 16px; /* Margin below */
+    font-size: 14px; /* Font size */
+    color: #4b5563; /* Gray text */
+}
+
+.filter-section { /* Styles filter buttons and dropdown */
+    display: flex; /* Uses Flexbox */
+    gap: 8px; /* Adds spacing */
+    flex-wrap: wrap; /* Allows wrapping */
+}
+
+.filter-btn { /* Styles filter buttons */
+    padding: 8px 16px; /* Smaller padding */
+    background: #e5e7eb; /* Light gray background */
+    color: #1f2937; /* Dark text */
+}
+
+.filter-btn.active { /* Styles active filter button */
+    background: linear-gradient(135deg, #3b82f6, #1e40af); /* Blue gradient */
+    color: white; /* White text */
+}
+
+.filter-btn:hover { /* Styles filter buttons on hover */
+    background: #d1d5db; /* Darker gray */
+}
+
+.clear-btn { /* Styles Clear All button */
+    padding: 8px 16px; /* Smaller padding */
+    background: linear-gradient(135deg, #ef4444, #b91c1c); /* Red gradient */
+}
+
+.clear-btn:hover { /* Styles Clear All button on hover */
+    background: linear-gradient(135deg, #dc2626, #991b1b); /* Darker red */
+    transform: translateY(-2px); /* Lifts button */
+}
+
+#taskChart { /* Styles the chart canvas */
+    margin: 20px 0; /* Adds margin */
+    max-width: 100%; /* Ensures responsiveness */
+}
+
+ul { /* Styles the task list */
+    list-style: none; /* Removes bullets */
+}
+
+li { /* Styles each task */
+    display: flex; /* Uses Flexbox */
+    justify-content: space-between; /* Spreads content */
+    align-items: center; /* Aligns vertically */
+    padding: 12px; /* Adds padding */
+    border-left: 4px solid transparent; /* Transparent left border for priority */
+    background: #f9fafb; /* Light background */
+    margin-bottom: 8px; /* Margin below */
+    border-radius: 6px; /* Rounds corners */
+    transition: transform 0.2s, background 0.2s; /* Smooth transitions */
+}
+
+li:hover { /* Styles tasks on hover */
+    transform: translateX(5px); /* Shifts right */
+    background: #f3f4f6; /* Darker background */
+}
+
+li.low { /* Styles low-priority tasks */
+    border-left-color: #22c55e; /* Green border */
+}
+
+li.medium { /* Styles medium-priority tasks */
+    border-left-color: #f59e0b; /* Orange border */
+}
+
+li.high { /* Styles high-priority tasks */
+    border-left-color: #ef4444; /* Red border */
+}
+
+.completed { /* Styles completed tasks */
+    text-decoration: line-through; /* Adds strikethrough */
+    color: #6b7280; /* Gray text */
+    background: #e5e7eb; /* Darker background */
+}
+
+.task-details { /* Styles task details (text, due date, category) */
+    flex: 1; /* Takes available space */
+}
+
+.task-details span { /* Styles task text */
+    cursor: pointer; /* Pointer cursor for clicking */
+}
+
+.task-meta { /* Styles due date and category */
+    font-size: 12px; /* Smaller font */
+    color: #6b7280; /* Gray text */
+    margin-top: 4px; /* Margin above */
+}
+
+.edit-btn, .delete-btn { /* Styles edit and delete buttons */
+    padding: 8px 16px; /* Padding */
+    margin-left: 8px; /* Margin between buttons */
+}
+
+.edit-btn { /* Styles edit button */
+    background: linear-gradient(135deg, #f59e0b, #d97706); /* Orange gradient */
+}
+
+.edit-btn:hover { /* Styles edit button on hover */
+    background: linear-gradient(135deg, #e88d04, #b85c04); /* Darker orange */
+    transform: translateY(-2px); /* Lifts button */
+}
+
+.delete-btn { /* Styles delete button */
+    background: linear-gradient(135deg, #ef4444, #b91c1c); /* Red gradient */
+}
+
+.delete-btn:hover { /* Styles delete button on hover */
+    background: linear-gradient(135deg, #dc2626, #991b1b); /* Darker red */
+    transform: translateY(-2px); /* Lifts button */
+}
+
+@media (max-width: 480px) { /* Styles for screens smaller than 480px */
+    .container { /* Adjusts container */
+        padding: 16px; /* Reduces padding */
+    }
+    .input-section { /* Adjusts input section */
+        flex-direction: column; /* Stacks inputs vertically */
+        gap: 8px; /* Reduces gap */
+    }
+    input, select, button { /* Adjusts inputs, selects, buttons */
+        width: 100%; /* Full width */
+    }
+    .task-stats { /* Adjusts task stats */
+        flex-direction: column; /* Stacks vertically */
+        align-items: flex-start; /* Aligns to start */
+    }
+}
