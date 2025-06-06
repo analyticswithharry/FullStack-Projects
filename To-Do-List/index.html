@@ -1,0 +1,27 @@
+<!DOCTYPE html> <!-- Declares the document as HTML5 for modern browser compatibility -->
+<html lang="en"> <!-- Defines the root HTML element, setting language to English -->
+<head> <!-- Contains metadata and external resource links -->
+    <meta charset="UTF-8"> <!-- Sets character encoding to UTF-8 for universal character support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures responsive design by matching viewport to device width -->
+    <title>Professional To-Do List</title> <!-- Sets the browser tab title to "Professional To-Do List" -->
+    <link rel="stylesheet" href="styles.css"> <!-- Links to styles.css for styling the webpage -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Imports Roboto font from Google Fonts for a modern look -->
+</head> <!-- Closes the head section -->
+<body> <!-- Defines the main content area visible to users -->
+    <div class="container"> <!-- Wraps content in a div with class="container" for centered layout -->
+        <h1>To-Do List</h1> <!-- Displays the main heading "To-Do List" -->
+        <div class="input-section"> <!-- Groups input and button for styling and layout -->
+            <input type="text" id="taskInput" placeholder="Add a new task..." maxlength="100"> <!-- Text input for tasks with id="taskInput", placeholder, and 100-character limit -->
+            <button onclick="addTask()">Add Task</button> <!-- Button to add tasks, triggers addTask() function -->
+        </div> <!-- Closes the input-section div -->
+        <p id="error" class="error hidden"></p> <!-- Paragraph for error messages, hidden by default with class="hidden" -->
+        <div class="task-stats"> <!-- Container for task statistics -->
+            <span id="taskCount">Tasks: 0</span> <!-- Displays total task count -->
+            <span id="completedCount">Completed: 0</span> <!-- Displays completed task count -->
+            <button onclick="clearAllTasks()" class="clear-btn">Clear All</button> <!-- Button to clear all tasks, triggers clearAllTasks() -->
+        </div> <!-- Closes the task-stats div -->
+        <ul id="taskList"></ul> <!-- Unordered list with id="taskList" to hold tasks dynamically -->
+    </div> <!-- Closes the container div -->
+    <script src="script.js"></script> <!-- Links to script.js for interactivity -->
+</body> <!-- Closes the body section -->
+</html> <!-- Closes the HTML document -->
